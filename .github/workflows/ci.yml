@@ -34,6 +34,7 @@ jobs:
               "scripts/brand_scanner.py",
               "scripts/generate_pdf_report.py",
               "scripts/crm_dashboard.py",
+              "scripts/verify_public_release.py",
               "scripts/webapp/app.py",
               "geo_seo/__init__.py",
               "geo_seo/__main__.py",
