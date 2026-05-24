@@ -27,8 +27,8 @@ Include:
 ## Security Expectations
 
 - Installers must avoid destructive operations outside `~/.codex/skills/geo/`.
-- Bootstrap installers must verify release asset checksums.
+- Release archives should include SHA-256 checksums.
 - Generated audit reports may contain sensitive client data and are ignored by git.
 - The project does not collect telemetry.
 - Network requests are limited to user-provided targets, public sources used for
-  audits, GitHub release assets, and package installation.
+  audits, GitHub repository install assets, release assets, and package installation.

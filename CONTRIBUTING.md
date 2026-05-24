@@ -38,14 +38,13 @@ geo-seo --help
 For release verification, also confirm anonymous public access:
 
 ```bash
-python scripts/verify_public_release.py --tag vX.Y.Z
+npm view github:quangdo126/geo-seo-codex name version bin --json
 ```
 
 Also check installer syntax:
 
 ```bash
 bash -n install.sh
-bash -n bootstrap.sh
 ```
 
 PowerShell parser check:
@@ -54,8 +53,6 @@ PowerShell parser check:
 $tokens = $null
 $errors = $null
 $null = [System.Management.Automation.Language.Parser]::ParseFile("install.ps1", [ref]$tokens, [ref]$errors)
-if ($errors.Count -gt 0) { $errors | ForEach-Object { Write-Error $_ }; exit 1 }
-$null = [System.Management.Automation.Language.Parser]::ParseFile("bootstrap.ps1", [ref]$tokens, [ref]$errors)
 if ($errors.Count -gt 0) { $errors | ForEach-Object { Write-Error $_ }; exit 1 }
 ```
 

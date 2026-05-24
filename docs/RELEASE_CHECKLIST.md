@@ -14,14 +14,15 @@ Use this checklist before tagging a release.
 
 - [ ] `python -m unittest discover -s tests -v`
 - [ ] `python -m py_compile scripts/geo_cli.py scripts/fetch_page.py scripts/citability_scorer.py scripts/llmstxt_generator.py scripts/brand_scanner.py scripts/generate_pdf_report.py scripts/crm_dashboard.py scripts/webapp/app.py geo_seo/__init__.py geo_seo/__main__.py tests/test_geo_cli.py`
-- [ ] `bash -n install.sh && bash -n bootstrap.sh`
-- [ ] PowerShell parser passes for `install.ps1` and `bootstrap.ps1`
+- [ ] `bash -n install.sh`
+- [ ] PowerShell parser passes for `install.ps1`
 - [ ] `python scripts/geo_cli.py doctor`
 - [ ] `python scripts/geo_cli.py self-test`
 - [ ] `python -m geo_seo --help`
 - [ ] `pip install .` followed by `geo-seo --help`
 - [ ] Legacy reference scan passes.
-- [ ] `python scripts/verify_public_release.py --tag vX.Y.Z`
+- [ ] `npm pack --dry-run`
+- [ ] `npm view github:quangdo126/geo-seo-codex name version bin --json`
 
 ## Install Verification
 
@@ -38,8 +39,7 @@ Use this checklist before tagging a release.
 - [ ] Release is created with:
   - [ ] `geo-seo-codex.zip`
   - [ ] `geo-seo-codex.zip.sha256`
-- [ ] Bootstrap install works from the latest release asset.
-- [ ] Anonymous access to repo API, raw bootstrap files, and release assets returns HTTP 200.
+- [ ] `npx github:quangdo126/geo-seo-codex` installs successfully.
 
 ## Post-Release
 

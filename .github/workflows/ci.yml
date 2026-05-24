@@ -34,7 +34,6 @@ jobs:
               "scripts/brand_scanner.py",
               "scripts/generate_pdf_report.py",
               "scripts/crm_dashboard.py",
-              "scripts/verify_public_release.py",
               "scripts/webapp/app.py",
               "geo_seo/__init__.py",
               "geo_seo/__main__.py",
@@ -46,15 +45,13 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Check shell installer syntax
         if: runner.os != 'Windows'
-        run: bash -n install.sh && bash -n bootstrap.sh
+        run: bash -n install.sh
       - name: Check PowerShell installer syntax
         shell: pwsh
         run: |
           $tokens = $null
           $errors = $null
           $null = [System.Management.Automation.Language.Parser]::ParseFile("install.ps1", [ref]$tokens, [ref]$errors)
-          if ($errors.Count -gt 0) { $errors | ForEach-Object { Write-Error $_ }; exit 1 }
-          $null = [System.Management.Automation.Language.Parser]::ParseFile("bootstrap.ps1", [ref]$tokens, [ref]$errors)
           if ($errors.Count -gt 0) { $errors | ForEach-Object { Write-Error $_ }; exit 1 }
       - name: Check legacy references
         shell: python

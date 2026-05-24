@@ -43,24 +43,10 @@ The installer copies the skill to `~/.codex/skills/geo/`, creates an isolated vi
 
 ### One-Line Install
 
-The bootstrap installer downloads the latest GitHub release archive and verifies its SHA-256 checksum before running the local installer.
-
-NPM/GitHub installer:
-
-```bash
-npx github:quangdo126/geo-seo-codex
-```
-
-Windows PowerShell 7:
+Install directly from the GitHub repository through npm:
 
 ```powershell
-irm https://raw.githubusercontent.com/quangdo126/geo-seo-codex/main/bootstrap.ps1 | iex
-```
-
-macOS/Linux or Git Bash:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/quangdo126/geo-seo-codex/main/bootstrap.sh | bash
+npx github:quangdo126/geo-seo-codex
 ```
 
 ## Verify
@@ -108,8 +94,8 @@ geo-seo-codex/
 +-- schema/
 +-- install.ps1
 +-- install.sh
-+-- bootstrap.ps1
-+-- bootstrap.sh
++-- package.json
++-- bin/
 +-- examples/
 +-- pyproject.toml
 +-- requirements.txt
