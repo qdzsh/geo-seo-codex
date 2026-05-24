@@ -2,7 +2,7 @@
 
 GEO-SEO Codex is a Codex CLI skill for auditing and improving website visibility in AI-powered search and answer engines. It focuses on Generative Engine Optimization (GEO) while keeping traditional SEO foundations in scope.
 
-Current release: `v0.2.0`
+Current release: `v0.3.0`
 
 ## Requirements
 
@@ -42,6 +42,8 @@ macOS/Linux or Git Bash:
 The installer copies the skill to `~/.codex/skills/geo/`, creates an isolated virtual environment at `~/.codex/skills/geo/.venv/`, and installs the Python dependencies from `requirements.txt`.
 
 ### One-Line Install
+
+The bootstrap installer downloads the latest GitHub release archive and verifies its SHA-256 checksum before running the local installer.
 
 Windows PowerShell 7:
 
@@ -160,6 +162,13 @@ Prospect and recurring-report workflows store local data under `~/.geo-prospects
 ## Privacy
 
 The skill runs locally through Codex CLI and bundled Python scripts. Website audits make normal HTTP requests to the target sites and public sources being checked. The project does not send audit data to a project-owned analytics service.
+
+## Project Docs
+
+- [Contributing](CONTRIBUTING.md)
+- [Security policy](SECURITY.md)
+- [Support](SUPPORT.md)
+- [Release checklist](docs/RELEASE_CHECKLIST.md)
 
 ## Uninstall
 

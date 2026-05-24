@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.3.0 - 2026-05-24
+
+Production-readiness hardening for public installation and contribution.
+
+- Add stdlib unit tests for the deterministic CLI audit, schema, llms.txt, and comparison paths.
+- Expand CI to run on Linux, macOS, and Windows across Python 3.10 and 3.12.
+- Add contributor, security, support, issue, PR, and release checklist templates.
+- Change bootstrap installers to download the latest GitHub release asset instead of cloning `main`.
+- Add SHA-256 release checksums and bootstrap checksum verification.
+
 ## v0.2.0 - 2026-05-24
 
 Release hardening and public-use features.
