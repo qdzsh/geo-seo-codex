@@ -1,0 +1,26 @@
+{
+  "schema_version": "geo-audit/v1",
+  "tool": "geo-seo-codex",
+  "tool_version": "0.2.0",
+  "generated_at": "2026-05-24",
+  "target": {
+    "url": "https://example.com",
+    "domain": "example.com"
+  },
+  "overall": {
+    "score": 37.0,
+    "rating": "Critical"
+  },
+  "scores": {
+    "ai_citability": 0.0,
+    "ai_crawler_access": 100.0,
+    "llms_txt": 0.0,
+    "structured_data": 0.0,
+    "technical_foundations": 80.0
+  },
+  "recommended_actions": [
+    "Add or improve /llms.txt so AI systems can discover priority pages.",
+    "Add Organization, Article, Product, FAQ, or LocalBusiness schema where relevant.",
+    "Rewrite key passages into direct, self-contained answer blocks."
+  ]
+}

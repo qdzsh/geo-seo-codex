@@ -59,6 +59,9 @@ Write-Info "Copying Codex skill files"
 Copy-Item -Force (Join-Path $sourceDir "SKILL.md") (Join-Path $installDir "SKILL.md")
 Copy-Item -Recurse -Force (Join-Path $sourceDir "references") (Join-Path $installDir "references")
 Copy-Item -Recurse -Force (Join-Path $sourceDir "agents") (Join-Path $installDir "agents")
+if (Test-Path (Join-Path $sourceDir "assets")) {
+    Copy-Item -Recurse -Force (Join-Path $sourceDir "assets") (Join-Path $installDir "assets")
+}
 
 Write-Info "Copying scripts and schema templates"
 Copy-Item -Recurse -Force (Join-Path $sourceDir "scripts") (Join-Path $installDir "scripts")

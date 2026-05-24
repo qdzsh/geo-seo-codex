@@ -47,15 +47,21 @@ directory and the active Python interpreter.
 
 | Command | Result |
 |---|---|
+| `$geo doctor` | Local installation health check |
+| `$geo self-test` | End-to-end smoke test |
 | `$geo quick <url>` | Fast deterministic snapshot, inline by default |
 | `$geo audit <url>` | Full GEO + SEO audit report |
+| `$geo audit-json <url>` | Standardized `GEO-AUDIT.json` artifact |
 | `$geo citability <url>` | `GEO-CITABILITY-SCORE.md` |
+| `$geo rewrite <url>` | Citation-ready rewrite starters |
 | `$geo crawlers <url>` | `GEO-CRAWLER-ACCESS.md` |
 | `$geo llmstxt <url>` | Analyze `/llms.txt` |
 | `$geo llmstxt <url> --generate` | Write deployable `llms.txt` |
+| `$geo compare-domain <url> <competitor>` | Competitor GEO comparison |
 | `$geo brands <url-or-brand>` | Brand/entity signal assessment |
 | `$geo platforms <url>` | ChatGPT, Google AIO, Perplexity, Gemini, Copilot readiness |
 | `$geo schema <url>` | Schema.org detection and JSON-LD recommendations |
+| `$geo schema <url> --generate organization` | Generate JSON-LD file |
 | `$geo technical <url>` | Technical SEO and AI-crawler foundation audit |
 | `$geo content <url>` | E-E-A-T and AI-citable content audit |
 | `$geo report <url>` | Client-ready Markdown report |
@@ -73,10 +79,16 @@ Use `scripts/geo_cli.py` for checks it supports before doing LLM synthesis:
 
 ```bash
 python scripts/geo_cli.py quick https://example.com
+python scripts/geo_cli.py doctor
+python scripts/geo_cli.py self-test
+python scripts/geo_cli.py audit-json https://example.com --out GEO-AUDIT.json
 python scripts/geo_cli.py citability https://example.com/page --out GEO-CITABILITY-SCORE.md
+python scripts/geo_cli.py rewrite https://example.com/page --out GEO-REWRITE-SUGGESTIONS.md
 python scripts/geo_cli.py crawlers https://example.com --out GEO-CRAWLER-ACCESS.md
 python scripts/geo_cli.py llmstxt https://example.com
 python scripts/geo_cli.py llmstxt https://example.com --generate --out llms.txt
+python scripts/geo_cli.py schema https://example.com --generate organization --out schema-organization.jsonld
+python scripts/geo_cli.py compare-domain https://example.com https://competitor.com
 python scripts/geo_cli.py fetch https://example.com --out audit-data.json
 ```
 
@@ -93,6 +105,7 @@ For `$geo audit <url>`:
    - `geo_cli.py fetch <url> --out audit-data.json`
    - `geo_cli.py crawlers <url> --json --out crawler-data.json`
    - `geo_cli.py citability <url> --json --out citability-data.json`
+   - `geo_cli.py audit-json <url> --out GEO-AUDIT.json`
 3. Inspect the homepage, sitemap, schema, robots.txt, llms.txt, and top pages if available.
 4. Evaluate the six categories:
    - AI Citability and Visibility: 25%

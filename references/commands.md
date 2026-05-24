@@ -13,6 +13,28 @@ python scripts/geo_cli.py quick <url>
 Return the score, top gaps, and next recommended command. Do not write files unless
 the user asks.
 
+## doctor
+
+Run:
+
+```bash
+python scripts/geo_cli.py doctor
+```
+
+Use this when install troubleshooting is needed. It checks Python version, required
+directories, dependency imports, and working-directory write access.
+
+## self-test
+
+Run:
+
+```bash
+python scripts/geo_cli.py self-test
+```
+
+Use this after installation or release packaging. It runs doctor, a quick snapshot,
+and llms.txt generation in a temporary directory.
+
 ## citability
 
 Run:
@@ -59,6 +81,8 @@ resources, company, support, and contact pages.
 Run the deterministic helpers first:
 
 ```bash
+python scripts/geo_cli.py audit <url> --out GEO-AUDIT-REPORT.md --json-out GEO-AUDIT.json
+python scripts/geo_cli.py audit-json <url> --out GEO-AUDIT.json
 python scripts/geo_cli.py quick <url> --out GEO-QUICK-SNAPSHOT.md
 python scripts/geo_cli.py fetch <url> --out audit-data.json
 python scripts/geo_cli.py crawlers <url> --json --out crawler-data.json
@@ -73,6 +97,29 @@ Then synthesize `GEO-AUDIT-REPORT.md` with:
 - Quick wins that can be done in 48 hours.
 - 30-day action plan grouped by week.
 - Technical appendix with robots.txt, llms.txt, and JSON-LD recommendations.
+
+## compare-domain
+
+Run:
+
+```bash
+python scripts/geo_cli.py compare-domain <url> <competitor-url> --out GEO-DOMAIN-COMPARISON.md
+```
+
+Use this for sales and strategy. Compare overall score plus citability, crawler
+access, llms.txt, structured data, and technical foundation deltas.
+
+## rewrite
+
+Run:
+
+```bash
+python scripts/geo_cli.py rewrite <url> --out GEO-REWRITE-SUGGESTIONS.md
+```
+
+Use this after citability scoring. The output gives deterministic rewrite starters
+for the weakest blocks. Replace bracketed placeholders with verified facts before
+publishing.
 
 ## schema
 
@@ -89,6 +136,15 @@ missing opportunities:
 - FAQPage or HowTo where the visible content supports it.
 
 Use templates from `schema/` and customize factual fields from the target site.
+
+Generate a file:
+
+```bash
+python scripts/geo_cli.py schema <url> --generate organization --out schema-organization.jsonld
+```
+
+Supported generation types: organization, local-business, article, software,
+product, website.
 
 ## technical
 

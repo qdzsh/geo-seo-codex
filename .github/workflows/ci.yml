@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Compile Python
+        run: |
+          python -m py_compile \
+            scripts/geo_cli.py \
+            scripts/fetch_page.py \
+            scripts/citability_scorer.py \
+            scripts/llmstxt_generator.py \
+            scripts/brand_scanner.py \
+            scripts/generate_pdf_report.py \
+            scripts/crm_dashboard.py \
+            scripts/webapp/app.py \
+            geo_seo/__main__.py
+      - name: Check shell installer syntax
+        run: bash -n install.sh && bash -n bootstrap.sh
+      - name: Check PowerShell installer syntax
+        shell: pwsh
+        run: |
+          $tokens = $null
+          $errors = $null
+          $null = [System.Management.Automation.Language.Parser]::ParseFile("install.ps1", [ref]$tokens, [ref]$errors)
+          if ($errors.Count -gt 0) { $errors | ForEach-Object { Write-Error $_ }; exit 1 }
+          $null = [System.Management.Automation.Language.Parser]::ParseFile("bootstrap.ps1", [ref]$tokens, [ref]$errors)
+          if ($errors.Count -gt 0) { $errors | ForEach-Object { Write-Error $_ }; exit 1 }
+      - name: Check legacy references
+        run: |
+          ! grep -RInE 'geo-seo-claude|Claude Code|~/.claude|anthropic-ai/claude-code|WebFetch|allowed-tools|GEO-SEO Claude' .
+      - name: CLI smoke tests
+        run: |
+          python scripts/geo_cli.py --help
+          python -m geo_seo --help
+          python -m pip install . --quiet
+          geo-seo --help
+          python scripts/geo_cli.py doctor

@@ -61,6 +61,9 @@ info "Copying Codex skill files"
 cp "$SOURCE_DIR/SKILL.md" "$INSTALL_DIR/SKILL.md"
 cp -R "$SOURCE_DIR/references" "$INSTALL_DIR/references"
 cp -R "$SOURCE_DIR/agents" "$INSTALL_DIR/agents"
+if [ -d "$SOURCE_DIR/assets" ]; then
+    cp -R "$SOURCE_DIR/assets" "$INSTALL_DIR/assets"
+fi
 
 info "Copying scripts and schema templates"
 cp -R "$SOURCE_DIR/scripts" "$INSTALL_DIR/scripts"

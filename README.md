@@ -2,7 +2,7 @@
 
 GEO-SEO Codex is a Codex CLI skill for auditing and improving website visibility in AI-powered search and answer engines. It focuses on Generative Engine Optimization (GEO) while keeping traditional SEO foundations in scope.
 
-Current release: `v0.1.0`
+Current release: `v0.2.0`
 
 ## Requirements
 
@@ -14,6 +14,13 @@ Current release: `v0.1.0`
 ## Install
 
 Clone the repository:
+
+```bash
+git clone https://github.com/quangdo126/geo-seo-codex.git
+cd geo-seo-codex
+```
+
+SSH also works for contributors:
 
 ```bash
 git clone git@github.com:quangdo126/geo-seo-codex.git
@@ -33,6 +40,20 @@ macOS/Linux or Git Bash:
 ```
 
 The installer copies the skill to `~/.codex/skills/geo/`, creates an isolated virtual environment at `~/.codex/skills/geo/.venv/`, and installs the Python dependencies from `requirements.txt`.
+
+### One-Line Install
+
+Windows PowerShell 7:
+
+```powershell
+irm https://raw.githubusercontent.com/quangdo126/geo-seo-codex/main/bootstrap.ps1 | iex
+```
+
+macOS/Linux or Git Bash:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/quangdo126/geo-seo-codex/main/bootstrap.sh | bash
+```
 
 ## Verify
 
@@ -79,6 +100,10 @@ geo-seo-codex/
 +-- schema/
 +-- install.ps1
 +-- install.sh
++-- bootstrap.ps1
++-- bootstrap.sh
++-- examples/
++-- pyproject.toml
 +-- requirements.txt
 ```
 
@@ -89,16 +114,44 @@ geo-seo-codex/
 | Command | Result |
 |---|---|
 | `$geo quick <url>` | Fast GEO visibility snapshot |
+| `$geo doctor` | Local install health check |
+| `$geo self-test` | End-to-end smoke test |
 | `$geo audit <url>` | Full GEO + SEO audit report |
+| `$geo audit-json <url>` | Standardized `GEO-AUDIT.json` |
 | `$geo citability <url>` | AI citation readiness report |
+| `$geo rewrite <url>` | Citation-ready rewrite starters |
 | `$geo crawlers <url>` | AI crawler access report |
 | `$geo llmstxt <url>` | Analyze `/llms.txt` |
 | `$geo llmstxt <url> --generate` | Generate deployable `llms.txt` |
 | `$geo schema <url>` | Schema.org detection and recommendations |
+| `$geo schema <url> --generate organization` | Generate JSON-LD file |
+| `$geo compare-domain <url> <competitor>` | Compare GEO readiness against a competitor |
 | `$geo technical <url>` | Technical SEO and AI crawler foundations |
 | `$geo content <url>` | Content E-E-A-T and answer-block audit |
 | `$geo report <url>` | Client-ready Markdown report |
 | `$geo report-pdf <url-or-json>` | PDF report from audit data |
+
+The helper can also be run directly from a checkout:
+
+```bash
+python -m geo_seo quick https://example.com
+```
+
+After `pip install -e .`, the console entrypoint is:
+
+```bash
+geo-seo quick https://example.com
+```
+
+## Examples
+
+Sample outputs live in `examples/`:
+
+- `quick-snapshot.md`
+- `crawler-report.md`
+- `citability-report.md`
+- `domain-comparison.md`
+- `audit-json.json`
 
 ## Local Data
 

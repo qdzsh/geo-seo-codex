@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geo-seo-codex"
+version = "0.2.0"
+description = "Codex CLI skill and deterministic helpers for GEO and SEO audits"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+dependencies = [
+  "beautifulsoup4>=4.12.0,<5.0.0",
+  "requests>=2.32.4,<3.0.0",
+  "lxml>=6.0.2,<7.0.0",
+  "playwright>=1.56.0,<2.0.0",
+  "Pillow>=12.1.0,<13.0.0",
+  "urllib3>=2.6.3,<3.0.0",
+  "validators>=0.22.0,<1.0.0",
+  "reportlab>=4.4.0,<5.0.0",
+  "flask>=3.0.0,<4.0.0",
+  "rich>=13.0.0,<14.0.0"
+]
+
+[project.scripts]
+geo-seo = "geo_seo.__main__:main"
+
+[tool.setuptools]
+packages = ["geo_seo", "scripts"]

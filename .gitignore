@@ -30,11 +30,13 @@ env/
 
 # Output files (generated reports - may contain sensitive client data)
 /GEO-*.md
+/GEO-*.json
 /GEO-*.pdf
 *.pdf
 /llms.txt
 /llms-full.txt
 /audit-data*.json
+/schema-*.jsonld
 
 # Credentials and secrets (never commit these)
 *.key
