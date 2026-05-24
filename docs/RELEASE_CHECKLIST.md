@@ -21,7 +21,7 @@ Use this checklist before tagging a release.
 - [ ] `python -m geo_seo --help`
 - [ ] `pip install .` followed by `geo-seo --help`
 - [ ] Legacy reference scan passes.
-- [ ] `python scripts/verify_public_release.py --tag vX.Y.Z`
+- [ ] `python scripts/verify_public_release.py`
 
 ## Install Verification
 
@@ -39,7 +39,7 @@ Use this checklist before tagging a release.
   - [ ] `geo-seo-codex.zip`
   - [ ] `geo-seo-codex.zip.sha256`
 - [ ] Bootstrap install works from the latest release asset.
-- [ ] Anonymous access to repo API, raw bootstrap files, and release assets returns HTTP 200.
+- [ ] Anonymous access to `qdzsh.dev` bootstrap files, release zip, and checksum returns HTTP 200.
 
 ## Post-Release
 

@@ -5,8 +5,7 @@ import sys
 import urllib.error
 import urllib.request
 
-
-DEFAULT_REPO = "quangdo126/geo-seo-codex"
+DEFAULT_BASE_URL = "https://qdzsh.dev/geo-seo-codex"
 
 
 def probe(url: str) -> tuple[int, int]:
@@ -21,13 +20,13 @@ def probe(url: str) -> tuple[int, int]:
         raise RuntimeError(f"{url}: {exc}") from exc
 
 
-def check(repo: str, tag: str, branch: str) -> int:
+def check(base_url: str) -> int:
+    base_url = base_url.rstrip("/")
     endpoints = {
-        "repo_api": f"https://api.github.com/repos/{repo}",
-        "raw_bootstrap_ps1": f"https://raw.githubusercontent.com/{repo}/{branch}/bootstrap.ps1",
-        "raw_bootstrap_sh": f"https://raw.githubusercontent.com/{repo}/{branch}/bootstrap.sh",
-        "release_zip": f"https://github.com/{repo}/releases/download/{tag}/geo-seo-codex.zip",
-        "release_checksum": f"https://github.com/{repo}/releases/download/{tag}/geo-seo-codex.zip.sha256",
+        "bootstrap_ps1": f"{base_url}/bootstrap.ps1",
+        "bootstrap_sh": f"{base_url}/bootstrap.sh",
+        "release_zip": f"{base_url}/latest/geo-seo-codex.zip",
+        "release_checksum": f"{base_url}/latest/geo-seo-codex.zip.sha256",
     }
 
     failures = []
@@ -49,12 +48,11 @@ def check(repo: str, tag: str, branch: str) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Verify anonymous public access to release install assets.")
-    parser.add_argument("--repo", default=DEFAULT_REPO, help="GitHub repository in owner/name form.")
-    parser.add_argument("--tag", default="v0.3.1", help="Release tag to verify.")
-    parser.add_argument("--branch", default="main", help="Branch used by raw bootstrap URLs.")
+    parser.add_argument("--base-url", default=DEFAULT_BASE_URL, help="Public base URL for installer assets.")
+    parser.add_argument("--tag", help="Deprecated; accepted for compatibility and ignored.")
     args = parser.parse_args()
 
-    return check(args.repo, args.tag, args.branch)
+    return check(args.base_url)
 
 
 if __name__ == "__main__":

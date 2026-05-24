@@ -2,7 +2,7 @@
 
 GEO-SEO Codex is a Codex CLI skill for auditing and improving website visibility in AI-powered search and answer engines. It focuses on Generative Engine Optimization (GEO) while keeping traditional SEO foundations in scope.
 
-Current release: `v0.3.1`
+Current release: `v0.3.2`
 
 ## Requirements
 
@@ -43,18 +43,18 @@ The installer copies the skill to `~/.codex/skills/geo/`, creates an isolated vi
 
 ### One-Line Install
 
-The bootstrap installer downloads the latest GitHub release archive and verifies its SHA-256 checksum before running the local installer.
+The bootstrap installer downloads the latest release archive from `qdzsh.dev` and verifies its SHA-256 checksum before running the local installer.
 
 Windows PowerShell 7:
 
 ```powershell
-irm https://raw.githubusercontent.com/quangdo126/geo-seo-codex/main/bootstrap.ps1 | iex
+irm https://qdzsh.dev/geo-seo-codex/bootstrap.ps1 | iex
 ```
 
 macOS/Linux or Git Bash:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/quangdo126/geo-seo-codex/main/bootstrap.sh | bash
+curl -fsSL https://qdzsh.dev/geo-seo-codex/bootstrap.sh | bash
 ```
 
 ## Verify
