@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Add `npx github:quangdo126/geo-seo-codex` installer support.
+
 ## v0.3.1 - 2026-05-24
 
 Public-release verification patch.

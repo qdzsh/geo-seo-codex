@@ -45,6 +45,12 @@ The installer copies the skill to `~/.codex/skills/geo/`, creates an isolated vi
 
 The bootstrap installer downloads the latest GitHub release archive and verifies its SHA-256 checksum before running the local installer.
 
+NPM/GitHub installer:
+
+```bash
+npx github:quangdo126/geo-seo-codex
+```
+
 Windows PowerShell 7:
 
 ```powershell

@@ -1,0 +1,33 @@
+{
+  "name": "geo-seo-codex",
+  "version": "0.3.1",
+  "description": "Install the GEO-SEO Codex skill for Codex CLI",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "geo-seo-codex": "./bin/geo-seo-codex.js"
+  },
+  "files": [
+    "SKILL.md",
+    "VERSION",
+    "LICENSE",
+    "README.md",
+    "requirements.txt",
+    "pyproject.toml",
+    "install.ps1",
+    "install.sh",
+    "agents/",
+    "assets/",
+    "examples/",
+    "geo_seo/*.py",
+    "references/",
+    "schema/",
+    "scripts/*.py",
+    "scripts/webapp/*.py",
+    "scripts/webapp/templates/",
+    "bin/"
+  ]
+}
