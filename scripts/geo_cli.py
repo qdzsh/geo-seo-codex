@@ -20,7 +20,7 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
 
-VERSION = "0.3.2"
+VERSION = "0.3.1"
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_DIR = SCRIPT_DIR.parent
 TIER_1_CRAWLERS = ["GPTBot", "ChatGPT-User", "ClaudeBot", "PerplexityBot"]

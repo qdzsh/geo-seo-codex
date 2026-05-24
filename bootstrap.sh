@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-BASE_URI="https://qdzsh.dev/geo-seo-codex/latest"
+BASE_URI="https://github.com/quangdo126/geo-seo-codex/releases/latest/download"
 TEMP_DIR="$(mktemp -d)"
 ZIP_PATH="$TEMP_DIR/geo-seo-codex.zip"
 CHECKSUM_PATH="$TEMP_DIR/geo-seo-codex.zip.sha256"

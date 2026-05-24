@@ -2,7 +2,7 @@
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
-$baseUri = "https://qdzsh.dev/geo-seo-codex/latest"
+$baseUri = "https://github.com/quangdo126/geo-seo-codex/releases/latest/download"
 $tempDir = Join-Path ([System.IO.Path]::GetTempPath()) ("geo-seo-codex-" + [System.Guid]::NewGuid().ToString("N"))
 $zipPath = Join-Path $tempDir "geo-seo-codex.zip"
 $checksumPath = Join-Path $tempDir "geo-seo-codex.zip.sha256"

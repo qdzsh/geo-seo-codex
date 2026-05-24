@@ -38,7 +38,7 @@ geo-seo --help
 For release verification, also confirm anonymous public access:
 
 ```bash
-python scripts/verify_public_release.py
+python scripts/verify_public_release.py --tag vX.Y.Z
 ```
 
 Also check installer syntax:

@@ -1,13 +1,5 @@
 # Changelog
 
-## v0.3.2 - 2026-05-24
-
-Custom-domain installer distribution.
-
-- Move one-line install URLs to `https://qdzsh.dev/geo-seo-codex/`.
-- Change bootstrap installers to download the release archive from `qdzsh.dev`.
-- Update public release verification for the custom-domain distribution path.
-
 ## v0.3.1 - 2026-05-24
 
 Public-release verification patch.
