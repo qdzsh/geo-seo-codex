@@ -50,7 +50,7 @@ def check(repo: str, tag: str, branch: str) -> int:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Verify anonymous public access to release install assets.")
     parser.add_argument("--repo", default=DEFAULT_REPO, help="GitHub repository in owner/name form.")
-    parser.add_argument("--tag", default="v0.3.0", help="Release tag to verify.")
+    parser.add_argument("--tag", default="v0.3.1", help="Release tag to verify.")
     parser.add_argument("--branch", default="main", help="Branch used by raw bootstrap URLs.")
     args = parser.parse_args()
 

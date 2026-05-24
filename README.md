@@ -2,7 +2,7 @@
 
 GEO-SEO Codex is a Codex CLI skill for auditing and improving website visibility in AI-powered search and answer engines. It focuses on Generative Engine Optimization (GEO) while keeping traditional SEO foundations in scope.
 
-Current release: `v0.3.0`
+Current release: `v0.3.1`
 
 ## Requirements
 

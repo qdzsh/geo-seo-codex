@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.3.1 - 2026-05-24
+
+Public-release verification patch.
+
+- Add `scripts/verify_public_release.py` to verify anonymous access to the repo API, raw bootstrap files, release zip, and release checksum.
+- Add public release verification to contributor and release docs.
+- Include the verifier in CI Python compilation.
+
 ## v0.3.0 - 2026-05-24
 
 Production-readiness hardening for public installation and contribution.
