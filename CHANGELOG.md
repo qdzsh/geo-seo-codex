@@ -1,9 +1,10 @@
 # Changelog
 
-## Unreleased
+## v0.3.2 - 2026-05-30
 
 - Add `npx github:qdzsh/geo-seo-codex` installer support.
 - Remove public bootstrap scripts and raw GitHub one-line install commands.
+- Update repository references, clone/install URLs, and package metadata to the `qdzsh` GitHub account.
 
 ## v0.3.1 - 2026-05-24
 
