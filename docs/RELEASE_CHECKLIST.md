@@ -22,7 +22,7 @@ Use this checklist before tagging a release.
 - [ ] `pip install .` followed by `geo-seo --help`
 - [ ] Legacy reference scan passes.
 - [ ] `npm pack --dry-run`
-- [ ] `npm view github:quangdo126/geo-seo-codex name version bin --json`
+- [ ] `npm view github:qdzsh/geo-seo-codex name version bin --json`
 
 ## Install Verification
 
@@ -39,7 +39,7 @@ Use this checklist before tagging a release.
 - [ ] Release is created with:
   - [ ] `geo-seo-codex.zip`
   - [ ] `geo-seo-codex.zip.sha256`
-- [ ] `npx github:quangdo126/geo-seo-codex` installs successfully.
+- [ ] `npx github:qdzsh/geo-seo-codex` installs successfully.
 
 ## Post-Release
 

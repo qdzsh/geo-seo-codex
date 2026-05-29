@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- Add `npx github:quangdo126/geo-seo-codex` installer support.
+- Add `npx github:qdzsh/geo-seo-codex` installer support.
 - Remove public bootstrap scripts and raw GitHub one-line install commands.
 
 ## v0.3.1 - 2026-05-24

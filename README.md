@@ -16,14 +16,14 @@ Current release: `v0.3.1`
 Clone the repository:
 
 ```bash
-git clone https://github.com/quangdo126/geo-seo-codex.git
+git clone https://github.com/qdzsh/geo-seo-codex.git
 cd geo-seo-codex
 ```
 
 SSH also works for contributors:
 
 ```bash
-git clone git@github.com:quangdo126/geo-seo-codex.git
+git clone git@github.com:qdzsh/geo-seo-codex.git
 cd geo-seo-codex
 ```
 
@@ -46,7 +46,7 @@ The installer copies the skill to `~/.codex/skills/geo/`, creates an isolated vi
 Install directly from the GitHub repository through npm:
 
 ```powershell
-npx github:quangdo126/geo-seo-codex
+npx github:qdzsh/geo-seo-codex
 ```
 
 ## Verify

@@ -3,6 +3,14 @@
   "version": "0.3.1",
   "description": "Install the GEO-SEO Codex skill for Codex CLI",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qdzsh/geo-seo-codex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/qdzsh/geo-seo-codex/issues"
+  },
+  "homepage": "https://github.com/qdzsh/geo-seo-codex#readme",
   "type": "module",
   "engines": {
     "node": ">=18"

@@ -6,7 +6,7 @@ deterministic Python helpers for GEO and SEO audits.
 ## Development Setup
 
 ```bash
-git clone https://github.com/quangdo126/geo-seo-codex.git
+git clone https://github.com/qdzsh/geo-seo-codex.git
 cd geo-seo-codex
 python -m venv .venv
 source .venv/bin/activate
@@ -38,7 +38,7 @@ geo-seo --help
 For release verification, also confirm anonymous public access:
 
 ```bash
-npm view github:quangdo126/geo-seo-codex name version bin --json
+npm view github:qdzsh/geo-seo-codex name version bin --json
 ```
 
 Also check installer syntax:
